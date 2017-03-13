@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Very simple session manager for TimoChess
+# Adapted from mini-x-session
+
+# XH note : 800x480 resolution for the WaveShare 5 inches display
+xrandr --newmode "800x480"   29.50  800 824 896 992  480 483 493 500 -hsync +vsync
+xrandr --addmode HDMI-1 800x480
+xrandr -s 800x480
+
+# XH Note : TimoChess is run by xinput_calibrator_once_timochess.sh
+
+exec matchbox-window-manager

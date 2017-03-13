@@ -1,0 +1,29 @@
+MACHINE = "raspberrypi2"
+
+
+KERNEL_DEVICETREE = " \
+    bcm2709-rpi-2-b.dtb \
+    bcm2710-rpi-3-b.dtb \
+    overlays/vc4-kms-v3d.dtbo \
+    overlays/ads7846.dtbo \
+    overlays/sdhost.dtbo \
+    "
+    
+MACHINE_FEATURES = "vc4graphics usbhost keyboard screen touchscreen "
+#MACHINE_FEATURES += " vc4graphics apm usbhost keyboard vfat ext2 screen touchscreen sdio"
+
+PREFERRED_VERSION_linux-raspberrypi := "4.9.%"
+
+
+
+# MUST BE PUT IN rpi-base.inc
+
+XSERVER = " \
+    xserver-xorg \
+    xf86-input-evdev \
+    xf86-input-mouse \
+    xf86-input-keyboard \
+    xserver-xorg-extension-glx \
+    xf86-video-modesetting \
+    "
+

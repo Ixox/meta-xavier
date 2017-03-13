@@ -1,0 +1,37 @@
+From 5867d3888745562d60400bb39ae91de7aeae500d Mon Sep 17 00:00:00 2001
+From: xavier <xavier.hosxe@gmail.com>
+Date: Sat, 4 Mar 2017 16:14:09 +0100
+Subject: [PATCH] Makefile new crosscompile build
+
+---
+ src/Makefile | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/src/Makefile b/src/Makefile
+index b5fdc88..600b13e 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -147,6 +147,12 @@ ifeq ($(COMP),)
+ 	COMP=gcc
+ endif
+ 
++ifeq ($(COMP),crosscompile)
++	comp=$(CC)
++	CXXFLAGS += -pedantic -Wextra -Wshadow
++endif
++
++
+ ifeq ($(COMP),gcc)
+ 	comp=gcc
+ 	CXX=g++
+@@ -521,7 +528,6 @@ config-sanity:
+ 	@test "$(popcnt)" = "yes" || test "$(popcnt)" = "no"
+ 	@test "$(sse)" = "yes" || test "$(sse)" = "no"
+ 	@test "$(pext)" = "yes" || test "$(pext)" = "no"
+-	@test "$(comp)" = "gcc" || test "$(comp)" = "icc" || test "$(comp)" = "mingw" || test "$(comp)" = "clang"
+ 
+ $(EXE): $(OBJS)
+ 	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
+-- 
+2.7.4
+
