@@ -10,12 +10,13 @@ IMAGE_INSTALL += " \
     timochess \
     mini-x-session-timochess \
     french-keyboard \
+    openssh-sftp-server \
 	"
 
 
 # Set Raspberrypi splash image
 SPLASH = "psplash-raspberrypi"
-IMAGE_FEATURES += "ssh-server-dropbear splash"
+IMAGE_FEATURES += "ssh-server-dropbear  "
 
 TOOLCHAIN_HOST_TASK += "nativesdk-projucer"
 
