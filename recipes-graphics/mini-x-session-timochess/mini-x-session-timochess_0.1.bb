@@ -3,7 +3,7 @@ SUMMARY = "Very simple session manager for X"
 PR = "r1"
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://mini-x-session-timochess;md5=7059a7daa28cec9fa5a2a62dc8bb2c1a"
+LIC_FILES_CHKSUM = "file://mini-x-session-timochess;md5=aa64b89056208c124245a0714de7c8b8"
 
 SECTION = "x11"
 
