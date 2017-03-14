@@ -15,4 +15,6 @@ do_deploy_append() {
     echo "" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
     echo "# SD card driver overclocking" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
     echo "dtoverlay=sdhost,overclock_50=100" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt    
+    echo "# Rainbow boot no interpolation" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+    echo "scaling_kernel=8" >>${DEPLOYDIR}/bcm2835-bootfiles/config.txt    
 }
