@@ -16,6 +16,7 @@ killall TimoChess
 echo ">> Installing timochess..."
 cd /home/root
 rpm -Uhv --force  timochess-1.0-r0.cortexa7hf_neon_vfpv4.rpm
+sync
 echo ">> Run the NEW TimoChess..."
 TimoChess &
 exit

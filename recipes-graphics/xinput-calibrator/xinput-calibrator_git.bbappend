@@ -7,10 +7,19 @@ SRC_URI += "\
             file://xinput_calibrator_once_timochess.sh \
         "
 
+WAVESHARE5="${@bb.utils.contains("MACHINE_FEATURES", "waveshare5", "1", "0", d)}"
+WAVESHARE7_1024="${@bb.utils.contains("MACHINE_FEATURES", "waveshare7_1024", "1", "0", d)}"
 
 do_install_append() {
     install -d ${D}${bindir}
-    install -m 0755 ${S}/../xinput_calibrator_once_timochess.sh ${D}${bindir}/xinput_calibrator_once_timochess.sh
+    if [ "${WAVESHARE5}" = "1" ]; then
+        install -m 0755 ${S}/../xinput_calibrator_once_timochess.sh ${D}${bindir}/xinput_calibrator_once_timochess.sh
+    fi
+
+    if [ "${WAVESHARE7_1024}" = "1" ]; then
+        sed -e 's,^RESOLUTION=800x480,RESOLUTION=1024x600,' ${S}/../xinput_calibrator_once_timochess.sh > ${S}/../xinput_calibrator_once_timochess_1024.sh
+        install -m 0755 ${S}/../xinput_calibrator_once_timochess_1024.sh ${D}${bindir}/xinput_calibrator_once_timochess.sh
+    fi
 
     install -d ${D}${sysconfdir}/X11/Xsession.d/
     install -m 0755 ${WORKDIR}/30xinput_calibrate.sh ${D}${sysconfdir}/X11/Xsession.d/

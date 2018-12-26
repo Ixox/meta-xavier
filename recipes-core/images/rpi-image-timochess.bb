@@ -14,9 +14,10 @@ IMAGE_INSTALL += " \
 	"
 
 
-# Set Raspberrypi splash image
-SPLASH = "psplash-raspberrypi"
-IMAGE_FEATURES += "ssh-server-dropbear  "
+# Set timochess splash image
+SPLASH = "psplash-timochess"
+
+IMAGE_FEATURES += " ssh-server-dropbear  "
 
 TOOLCHAIN_HOST_TASK += "nativesdk-projucer"
 
@@ -24,10 +25,10 @@ TOOLCHAIN_HOST_TASK += "nativesdk-projucer"
 MACHINE_FEATURES+= " vc4graphics "
 
 # Turbo mode
-ARM_FREQ = "1000"
-CORE_FREQ = "500"
-SDRAM_FREQ = "500"
-OVER_VOLTAGE = "2"
+#ARM_FREQ = "1000"
+#CORE_FREQ = "500"
+#SDRAM_FREQ = "500"
+#OVER_VOLTAGE = "2"
 
 DISABLE_OVERSCAN = "1"
 

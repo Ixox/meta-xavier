@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Very simple session manager for TimoChess
+# Adapted from mini-x-session
+
+# No screensaver : Uggly on TFT
+xset s off
+
+# XH Note : TimoChess is run by xinput_calibrator_once_timochess.sh
+
+exec matchbox-window-manager -use_titlebar no -use_cursor no

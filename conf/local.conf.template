@@ -1,3 +1,5 @@
+# timochess - raspberry pi 2
+
 MACHINE = "raspberrypi2"
 
 
@@ -9,11 +11,10 @@ KERNEL_DEVICETREE = " \
     overlays/sdhost.dtbo \
     "
     
-MACHINE_FEATURES = "vc4graphics usbhost keyboard screen touchscreen "
+MACHINE_FEATURES = "vc4graphics usbhost keyboard screen touchscreen waveshare5"
 #MACHINE_FEATURES += " vc4graphics apm usbhost keyboard vfat ext2 screen touchscreen sdio"
 
 PREFERRED_VERSION_linux-raspberrypi := "4.9.%"
-
 
 
 # MUST BE PUT IN rpi-base.inc

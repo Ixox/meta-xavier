@@ -19,7 +19,7 @@ FILES_${PN} += "${datadir}/fonts/opentype"
 do_compile() {
   cd ${B}/LinuxMakefile
   
-  TARGET_ARCH="-march=armv7-a" CONFIG=Release oe_runmake
+  TARGET_ARCH="-march=armv6" CONFIG=Release oe_runmake
 }
 
 do_install() {
